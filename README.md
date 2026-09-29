@@ -11,9 +11,9 @@ The admin manages every notification from **one screen**. Each **trigger** (an e
 | Web Push | OneSignal (web push only, iOS/Android off) | |
 
 **Live links**
-- Frontend: `https://<your-app>.vercel.app`
-- Backend: `https://<your-api>.onrender.com/api/health/`
-- Video walkthrough: `<loom / drive link>`
+- Frontend: `https://notification-system-theta.vercel.app`
+- Backend: `https://notifyhub-api-g8jj.onrender.com/api/health/`
+
 
 ---
 
