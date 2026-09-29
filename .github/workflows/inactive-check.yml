@@ -1,0 +1,16 @@
+# Hourly job that fires "Not logged in for 1 day / 1 week" triggers.
+# Add repo secrets: BACKEND_URL (e.g. https://notifyhub-api.onrender.com) and CRON_SECRET (same as on Render).
+name: Inactive users check
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch:
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Call backend job endpoint
+        run: |
+          curl -fsS --retry 3 --retry-delay 20 --max-time 120 -X POST \
+            "${{ secrets.BACKEND_URL }}/api/jobs/check-inactive/" \
+            -H "X-Cron-Secret: ${{ secrets.CRON_SECRET }}"
